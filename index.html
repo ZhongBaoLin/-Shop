@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текстиль Shop - унікальні тканини для творчості</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-cut"></i>
+                    <span>Текстиль Shop</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Головна</a></li>
+                        <li><a href="#products">Товари</a></li>
+                        <li><a href="#about">Про нас</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-icon" id="searchIcon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h2>Пошук тканин</h2>
+                <button class="close-search">&times;</button>
+            </div>
+            <div class="search-input-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Введіть назву тканини...">
+                <button class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <!-- Search results will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <button class="product-modal-close" id="productModalClose">&times;</button>
+            <div class="product-modal-body" id="productModalBody">
+                <!-- Product details will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-modal-content">
+            <button class="checkout-modal-close" id="checkoutModalClose">&times;</button>
+            <h2>Оформлення замовлення</h2>
+            <div class="checkout-form" id="checkoutForm">
+                <!-- Checkout form will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Текстиль Shop</h1>
+            <p>Знайдіть ідеальну тканину для вашого творчого проекту. Широкий вибір якісних матеріалів за доступними цінами.</p>
+            <a href="#products" class="btn">Перейти до каталогу</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container">
+        <h2 class="section-title">Категорії тканин</h2>
+        <div class="categories">
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://storage.agravery.com/uploads/cotton2911-768x512.jpg');"></div>
+                <div class="category-content">
+                    <h3>Баво́вна</h3>
+                    <p>Натуральні бавовняні тканини для одягу, домашнього текстилю та декору.</p>
+                    <a href="#products" class="btn" style="margin-top: 1rem;">Переглянути</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://tk-company.com.ua/uploads/wysiwyg/lon-chi-viskoza-yaku-tkaninu-vibrati-na-lito-lon.jpg');"></div>
+                <div class="category-content">
+                    <h3>Льон</h3>
+                    <p>Екологічні льняні тканини з натуральних волокон для літнього одягу та аксесуарів.</p>
+                    <a href="#products" class="btn" style="margin-top: 1rem;">Переглянути</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://tkanyny.com.ua/wp-content/uploads/image_1942.jpg');"></div>
+                <div class="category-content">
+                    <h3>Синтетика</h3>
+                    <p>Сучасні синтетичні тканини з поліестеру, нейлону та еластану для різних потреб.</p>
+                    <a href="#products" class="btn" style="margin-top: 1rem;">Переглянути</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container" id="products">
+        <h2 class="section-title">Наші тканини</h2>
+        
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-group">
+                <label for="category">Категорія</label>
+                <select id="category">
+                    <option value="all">Всі категорії</option>
+                    <option value="cotton">Баво́вна</option>
+                    <option value="linen">Льон</option>
+                    <option value="synthetic">Синтетика</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="density">Щільність (г/м²)</label>
+                <select id="density">
+                    <option value="all">Будь-яка щільність</option>
+                    <option value="light">Легкі (до 150 г/м²)</option>
+                    <option value="medium">Середні (150-300 г/м²)</option>
+                    <option value="heavy">Щільні (понад 300 г/м²)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sort">Сортування</label>
+                <select id="sort">
+                    <option value="default">За замовчуванням</option>
+                    <option value="price-low">Від найдешевших</option>
+                    <option value="price-high">Від найдорожчих</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Products Grid -->
+        <div class="products" id="productsGrid">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Про нас</h2>
+            <div class="about-content">
+                <div class="about-img"></div>
+                <div class="about-text">
+                    <h2>Наша історія</h2>
+                    <p>Тканинна Майстерня - це сімейний бізнес, який почав свою діяльність у 2010 році. Ми спеціалізуємося на продажі якісних тканин для швейних проектів будь-якої складності.</p>
+                    <p>Наша місія - надати творчим людям доступ до широкого вибору якісних матеріалів за справедливими цінами. Ми віримо, що кожен проект починається з правильно обраної тканини.</p>
+                    <p>У нашому асортименті ви знайдете тканини різних текстур, кольорів та призначення - від натуральних матеріалів для одягу до спеціалізованих тканин для декору та хобі.</p>
+                    <a href="#contact" class="btn">Зв'язатися з нами</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Контакти</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Адреса</h3>
+                            <p>м. Біла Церква, вул. Тканинна, 15</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Телефон</h3>
+                            <p>+38 (04563) 12-34-56</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@tkanyna.com.ua</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Графік роботи</h3>
+                            <p>Пн-Пт: 9:00-19:00<br>Сб-Нд: 10:00-17:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Написати нам</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ваше ім'я</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Повідомлення</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Надіслати</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Кошик</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div class="cart-total" id="cartTotal">
+                Загальна сума: 0 грн
+            </div>
+            <button class="btn" id="checkoutBtn" style="width: 100%;">Оформити замовлення</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Текстиль Shop</h3>
+                    <p>Якісні тканини для ваших творчих проектів. Широкий вибір, доступні ціни, професійна консультація.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Категорії</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Баво́вна</a></li>
+                        <li><a href="#">Льон</a></li>
+                        <li><a href="#">Синтетика</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Інформація</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Про нас</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакти</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> м. Біла Церква, вул. Тканинна, 15</li>
+                        <li><i class="fas fa-phone"></i> +38 (04563) 12-34-56</li>
+                        <li><i class="fas fa-envelope"></i> info@tkanyna.com.ua</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Тканинна Майстерня. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product data with additional details
+        const products = [
+            // Cotton products (5 items)
+            { 
+                id: 1, 
+                name: "Бавовна біла", 
+                price: 120, 
+                category: "cotton", 
+                density: "light", 
+                image: "https://tk.ua/uploads/product_images/bf/79/w744_frukk7beg_6391c4da.webp", 
+                badge: "Хіт",
+                description: "М'яка біла бавовняна тканина ідеально підходить для пошиття дитячого одягу, сорочок та домашнього текстилю. Відмінно пропускає повітря та вбирає вологу.",
+                composition: "100% бавовна",
+                width: "150 см",
+                care: "Дозволена прання при 60°C, прасування на середній температурі",
+                images: [
+                    "https://tk.ua/uploads/product_images/bf/79/w744_frukk7beg_6391c4da.webp",
+                    "https://tk.ua/uploads/product_images/6e/31/w744_frukk35vd_d8773a02.webp",
+                    "https://tk.ua/uploads/product_images/ab/dd/w744_frukkbd5r_8d1f383a.webp"
+                ]
+            },
+            { 
+                id: 2, 
+                name: "Бавовна кольорова", 
+                price: 150, 
+                category: "cotton", 
+                density: "medium", 
+                image: "https://tk.ua/uploads/product_images/7a/a0/w744_fs5326tg8_121b0dfb.webp",
+                description: "Яскрава кольорова бавовна з стійким фарбуванням. Ідеальна для літнього одягу, суконь та спідниць.",
+                composition: "100% бавовна",
+                width: "150 см",
+                care: "Дозволена прання при 40°C, зворотне прасування",
+                images: [
+                    "https://tk.ua/uploads/product_images/7a/a0/w744_fs5326tg8_121b0dfb.webp",
+                    "https://tk.ua/uploads/product_images/2c/88/w744_fs5322lfg_9b31b5f5.webp",
+                    "https://tk.ua/uploads/product_images/0f/98/w744_fs532b4oh_2e0e5eca.webp"
+                ]
+            },
+            { 
+                id: 3, 
+                name: "Бавовна дитяча", 
+                price: 180, 
+                category: "cotton", 
+                density: "light", 
+                image: "https://tk.ua/uploads/product_images/8a/f6/w720_frm25mnfr_fceec81a.webp", 
+                badge: "Новинка",
+                description: "Надзвичайно м'яка та гіпоалергенна бавовна для дітей. Безпечна для ніжної дитячої шкіри.",
+                composition: "100% бавовна",
+                width: "140 см",
+                care: "Дозволена прання при 60°C, не використовувати відбілювач",
+                images: [
+                    "https://tk.ua/uploads/product_images/8a/f6/w720_frm25mnfr_fceec81a.webp",
+                    "https://tk.ua/uploads/product_images/14/de/w720_frm25ij3l_73b3f1e5.webp",
+                    "https://tk.ua/uploads/product_images/a7/7b/w720_frm25qu9m_251e1569.webp"
+                ]
+            },
+            { 
+                id: 4, 
+                name: "Бавовна джинсова", 
+                price: 220, 
+                category: "cotton", 
+                density: "heavy", 
+                image: "https://tkani5.ua/56494-large_default/t.jpg",
+                description: "Щільна джинсова тканина для пошиття джинсів, курток та іншого міцного одягу.",
+                composition: "98% бавовна, 2% еластан",
+                width: "150 см",
+                care: "Прання при 30°C, сушіння в розправленому вигляді",
+                images: [
+                    "https://tkani5.ua/56494-large_default/t.jpg",
+                    "https://tkani5.ua/56495-large_default/t.jpg"
+                ]
+            },
+            { 
+                id: 5, 
+                name: "Бавовна вельвет", 
+                price: 280, 
+                category: "cotton", 
+                density: "heavy", 
+                image: "https://market365.com.ua/img/sm/3c5a486c/3d4f8b.jpg",
+                description: "Вельветова тканина з характерним ворсом. Ідеальна для осіннього та зимового одягу.",
+                composition: "100% бавовна",
+                width: "140 см",
+                care: "Прання при 30°C, не використовувати праску безпосередньо на ворс",
+                images: [
+                    "https://market365.com.ua/img/sm/3c5a486c/3d4f8b.jpg",
+                    "https://market365.com.ua/img/sm/3c5a486c/3d4f8c.jpg"
+                ]
+            },
+            
+            // Linen products (5 items)
+            { 
+                id: 6, 
+                name: "Льон натуральний", 
+                price: 350, 
+                category: "linen", 
+                density: "medium", 
+                image: "https://tk.ua/uploads/product_images/42/4f/w720_fuj8f8589_84a7146d.webp", 
+                badge: "Хіт",
+                description: "Натуральний льон високої якості з характерною структурою. Ідеальний для літнього одягу, костюмів та домашнього текстилю.",
+                composition: "100% льон",
+                width: "140 см",
+                care: "Ручне прання або делікатний режим, прасування з парою",
+                images: [
+                    "https://tk.ua/uploads/product_images/42/4f/w720_fuj8f8589_84a7146d.webp",
+                    "https://tk.ua/uploads/product_images/a7/ba/w720_fuj8f3q3t_6953a693.webp"
+                ]
+            },
+            { 
+                id: 7, 
+                name: "Льон кольоровий", 
+                price: 380, 
+                category: "linen", 
+                density: "medium", 
+                image: "https://tk.ua/uploads/product_images/53/7b/w720_fuj8j7pdn_47bbe6f2.webp",
+                description: "Льон з яскравим стійким фарбуванням. Зберігає всі переваги натурального льону.",
+                composition: "100% льон",
+                width: "140 см",
+                care: "Прання при 30°C, сушіння в тіні",
+                images: [
+                    "https://tk.ua/uploads/product_images/53/7b/w720_fuj8j7pdn_47bbe6f2.webp",
+                    "https://tk.ua/uploads/product_images/16/34/w720_fuj8j3dmc_0531ab2e.webp"
+                ]
+            },
+            { 
+                id: 8, 
+                name: "Льон з бавовною", 
+                price: 300, 
+                category: "linen", 
+                density: "light", 
+                image: "https://tk.ua/uploads/product_images/03/2f/w720_fuj8e4039_d728faf6.webp",
+                description: "Комбінована тканина з льону та бавовни. Поєднує м'якість бавовни та міцність льону.",
+                composition: "50% льон, 50% бавовна",
+                width: "150 см",
+                care: "Прання при 40°C, прасування на середній температурі",
+                images: [
+                    "https://tk.ua/uploads/product_images/03/2f/w720_fuj8e4039_d728faf6.webp",
+                    "https://tk.ua/uploads/product_images/27/69/w720_fuj8dvhf8_3355c42d.webp"
+                ]
+            },
+            { 
+                id: 9, 
+                name: "Льон декоративний", 
+                price: 420, 
+                category: "linen", 
+                density: "heavy", 
+                image: "https://tk.ua/uploads/product_images/c2/1e/w720_frvdpe5v3_e041e61b.webp", 
+                badge: "Акція",
+                description: "Щільний декоративний льон для оббивки меблів, штор та інших елементів інтер'єру.",
+                composition: "100% льон",
+                width: "140 см",
+                care: "Хімічне чищення",
+                images: [
+                    "https://tk.ua/uploads/product_images/c2/1e/w720_frvdpe5v3_e041e61b.webp",
+                    "https://tk.ua/uploads/product_images/30/13/w720_frvdp9qkl_f8ce3432.webp"
+                ]
+            },
+            { 
+                id: 10, 
+                name: "Льон для одягу", 
+                price: 320, 
+                category: "linen", 
+                density: "light", 
+                image: "https://tk.ua/uploads/product_images/3b/94/w720_fuj6ok3m4_1cc91bc5.webp",
+                description: "Легкий льон спеціально для пошиття літнього одягу. Чудово драпірується та комфортний у носінні.",
+                composition: "100% льон",
+                width: "150 см",
+                care: "Прання при 30°C, прасування злегка вологої тканини",
+                images: [
+                    "https://tk.ua/uploads/product_images/3b/94/w720_fuj6ok3m4_1cc91bc5.webp",
+                    "https://tk.ua/uploads/product_images/e7/71/w720_fuj6oef5s_9fc160be.webp"
+                ]
+            },
+            
+            // Synthetic products (5 items)
+            { 
+                id: 11, 
+                name: "Поліестер м'який", 
+                price: 90, 
+                category: "synthetic", 
+                density: "light", 
+                image: "https://tk.ua/uploads/product_images/c4/8e/w720_g1a3mh2vt_74e37576.webp",
+                description: "М'яка та еластична поліестерова тканина, що не потребує особливого догляду. Ідеальна для повсякденного одягу.",
+                composition: "100% поліестер",
+                width: "150 см",
+                care: "Прання при 40°C, швидке сушіння, не потребує прасування",
+                images: [
+                    "https://tk.ua/uploads/product_images/c4/8e/w720_g1a3mh2vt_74e37576.webp",
+                    "https://tk.ua/uploads/product_images/1e/17/w720_g1a3mcr88_3e178049.webp"
+                ]
+            },
+            { 
+                id: 12, 
+                name: "Нейлон еластичний", 
+                price: 130, 
+                category: "synthetic", 
+                density: "light", 
+                image: "https://tk.ua/uploads/product_images/25/04/w720_frq7d5gtq_dfb121dc.webp", 
+                badge: "Новинка",
+                description: "Еластичний нейлон з чудовими драпірувальними властивостями. Ідеальний для спортивного одягу.",
+                composition: "100% нейлон",
+                width: "150 см",
+                care: "Прання при 30°C, не використовувати праску",
+                images: [
+                    "https://tk.ua/uploads/product_images/25/04/w720_frq7d5gtq_dfb121dc.webp",
+                    "https://tk.ua/uploads/product_images/a6/3c/w720_frq7d17hj_03b95ea4.webp"
+                ]
+            },
+            { 
+                id: 13, 
+                name: "Синтетика для спорту", 
+                price: 160, 
+                category: "synthetic", 
+                density: "medium", 
+                image: "https://domtkani.com.ua/ua/assets/thumbstmp/7/7008894977967bd1f139da5006e6329d.jpg",
+                description: "Спеціальна тканина для спортивного одягу з властивістю відводити вологу. Комфортна при активному русі.",
+                composition: "88% поліестер, 12% еластан",
+                width: "150 см",
+                care: "Прання при 30°C, швидке сушіння",
+                images: [
+                    "https://domtkani.com.ua/ua/assets/thumbstmp/7/7008894977967bd1f139da5006e6329d.jpg",
+                    "https://domtkani.com.ua/ua/assets/thumbstmp/5/582a71f67453fd8e3027c78ae324b737.jpg"
+                ]
+            },
+            { 
+                id: 14, 
+                name: "Синтетика водостійка", 
+                price: 200, 
+                category: "synthetic", 
+                density: "heavy", 
+                image: "https://domtkani.com.ua/images/product/5090/000224199_p_l.jpg",
+                description: "Водостійка синтетична тканина з поліуретановим покриттям. Ідеальна для курток, дощовиків та спорядження.",
+                composition: "100% поліестер з PU покриттям",
+                width: "150 см",
+                care: "Протирання вологою ганчіркою, не прання",
+                images: [
+                    "https://domtkani.com.ua/images/product/5090/000224199_p_l.jpg",
+                    "https://domtkani.com.ua/ua/assets/thumbstmp/f/f1d7a39a73d02cf08af478b0afa9abf2.jpg"
+                ]
+            },
+            { 
+                id: 15, 
+                name: "Синтетика декоративна", 
+                price: 180, 
+                category: "synthetic", 
+                density: "medium", 
+                image: "https://tk.ua/uploads/product_images/d0/0d/w720_g0uq3f0em_a789beb3.webp", 
+                badge: "Акція",
+                description: "Декоративна синтетична тканина з цікавою текстурою. Використовується для штор, покривал та декоративних подушек.",
+                composition: "100% поліестер",
+                width: "140 см",
+                care: "Прання при 30°C, делікатний режим",
+                images: [
+                    "https://tk.ua/uploads/product_images/d0/0d/w720_g0uq3f0em_a789beb3.webp",
+                    "https://tk.ua/uploads/product_images/de/a5/w720_g0uq3aiif_0fbe8eea.webp"
+                ]
+            }
+        ];
+
+        // Cart functionality
+        let cart = [];
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const closeModal = document.querySelector('.close-modal');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const cartCount = document.querySelector('.cart-count');
+
+        // Search functionality
+        const searchIcon = document.getElementById('searchIcon');
+        const searchModal = document.getElementById('searchModal');
+        const closeSearch = document.querySelector('.close-search');
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const searchResults = document.getElementById('searchResults');
+
+        // Product modal functionality
+        const productModal = document.getElementById('productModal');
+        const productModalClose = document.getElementById('productModalClose');
+        const productModalBody = document.getElementById('productModalBody');
+
+        // Checkout modal functionality
+        const checkoutModal = document.getElementById('checkoutModal');
+        const checkoutModalClose = document.getElementById('checkoutModalClose');
+        const checkoutForm = document.getElementById('checkoutForm');
+
+        // Display products
+        function displayProducts(productsToShow) {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+            
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-img" style="background-image: url('${product.image}')">
+                        ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-meta">
+                            <span>${getCategoryName(product.category)}</span>
+                            <span>${getDensityText(product.density)}</span>
+                        </div>
+                        <div class="product-price">${product.price} грн/м</div>
+                        <button class="add-to-cart" data-id="${product.id}">
+                            <i class="fas fa-shopping-cart"></i> Додати в кошик
+                        </button>
+                    </div>
+                `;
+                
+                // Add click event to open product modal
+                productCard.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('add-to-cart')) {
+                        openProductModal(product.id);
+                    }
+                });
+                
+                productsGrid.appendChild(productCard);
+            });
+            
+            // Add event listeners to add to cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+        }
+
+        // Open product modal
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            productModalBody.innerHTML = `
+                <div class="product-modal-images">
+                    <div class="product-modal-main-image" style="background-image: url('${product.images[0]}')"></div>
+                    <div class="product-modal-thumbnails">
+                        ${product.images.map((img, index) => `
+                            <div class="product-modal-thumbnail ${index === 0 ? 'active' : ''}" 
+                                 style="background-image: url('${img}')"
+                                 data-image="${img}"></div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="product-modal-info">
+                    <div>
+                        <div class="product-modal-header">
+                            <h1 class="product-modal-title">${product.name}</h1>
+                            <div class="product-modal-price">${product.price} грн/м</div>
+                            ${product.badge ? `<div class="product-modal-badge">${product.badge}</div>` : ''}
+                        </div>
+                        <div class="product-modal-description">
+                            <p>${product.description}</p>
+                        </div>
+                        <div class="product-modal-details">
+                            <div class="product-modal-detail-item">
+                                <span class="product-modal-detail-label">Категорія:</span>
+                                <span class="product-modal-detail-value">${getCategoryName(product.category)}</span>
+                            </div>
+                            <div class="product-modal-detail-item">
+                                <span class="product-modal-detail-label">Щільність:</span>
+                                <span class="product-modal-detail-value">${getDensityText(product.density)}</span>
+                            </div>
+                            <div class="product-modal-detail-item">
+                                <span class="product-modal-detail-label">Склад:</span>
+                                <span class="product-modal-detail-value">${product.composition}</span>
+                            </div>
+                            <div class="product-modal-detail-item">
+                                <span class="product-modal-detail-label">Ширина:</span>
+                                <span class="product-modal-detail-value">${product.width}</span>
+                            </div>
+                            <div class="product-modal-detail-item">
+                                <span class="product-modal-detail-label">Догляд:</span>
+                                <span class="product-modal-detail-value">${product.care}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-modal-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" id="decreaseQuantity">-</button>
+                            <input type="number" class="quantity-input" id="productQuantity" value="1" min="1">
+                            <button class="quantity-btn" id="increaseQuantity">+</button>
+                        </div>
+                        <button class="btn" id="addToCartModal" style="flex: 1;">Додати в кошик</button>
+                    </div>
+                </div>
+            `;
+            
+            // Add event listeners for thumbnail images
+            document.querySelectorAll('.product-modal-thumbnail').forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    const imageUrl = this.getAttribute('data-image');
+                    document.querySelector('.product-modal-main-image').style.backgroundImage = `url('${imageUrl}')`;
+                    
+                    // Update active thumbnail
+                    document.querySelectorAll('.product-modal-thumbnail').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Add event listeners for quantity buttons
+            document.getElementById('decreaseQuantity').addEventListener('click', function() {
+                const quantityInput = document.getElementById('productQuantity');
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                }
+            });
+            
+            document.getElementById('increaseQuantity').addEventListener('click', function() {
+                const quantityInput = document.getElementById('productQuantity');
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            });
+            
+            // Add event listener for add to cart button in modal
+            document.getElementById('addToCartModal').addEventListener('click', function() {
+                const quantity = parseInt(document.getElementById('productQuantity').value);
+                addToCart(product.id, quantity);
+                productModal.style.display = 'none';
+            });
+            
+            productModal.style.display = 'flex';
+        }
+
+        // Open checkout modal
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                alert('Ваш кошик порожній!');
+                return;
+            }
+            
+            let totalPrice = 0;
+            const checkoutItemsHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                return `
+                    <div class="checkout-item">
+                        <span>${item.name} (${item.quantity}м)</span>
+                        <span>${itemTotal} грн</span>
+                    </div>
+                `;
+            }).join('');
+            
+            checkoutForm.innerHTML = `
+                <div class="checkout-summary">
+                    <h3>Ваше замовлення</h3>
+                    <div class="checkout-items">
+                        ${checkoutItemsHTML}
+                    </div>
+                    <div class="checkout-total">Загальна сума: ${totalPrice} грн</div>
+                </div>
+                <div>
+                    <h3>Контактна інформація</h3>
+                    <div class="form-group">
+                        <label for="checkoutName">Ім'я та прізвище *</label>
+                        <input type="text" id="checkoutName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutPhone">Телефон *</label>
+                        <input type="tel" id="checkoutPhone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutEmail">Email *</label>
+                        <input type="email" id="checkoutEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group form-full-width">
+                        <label for="checkoutAddress">Адреса доставки *</label>
+                        <textarea id="checkoutAddress" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutCity">Місто *</label>
+                        <input type="text" id="checkoutCity" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutPostal">Поштовий індекс</label>
+                        <input type="text" id="checkoutPostal" class="form-control">
+                    </div>
+                    <div class="form-group form-full-width">
+                        <label for="checkoutNotes">Примітки до замовлення</label>
+                        <textarea id="checkoutNotes" class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Підтвердити замовлення</button>
+                </div>
+            `;
+            
+            // Add event listener for checkout form submission
+            const checkoutSubmitBtn = checkoutForm.querySelector('button[type="submit"]');
+            checkoutSubmitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                processOrder();
+            });
+            
+            checkoutModal.style.display = 'flex';
+            cartModal.style.display = 'none';
+        }
+
+        // Process order
+        function processOrder() {
+            const name = document.getElementById('checkoutName').value;
+            const phone = document.getElementById('checkoutPhone').value;
+            const email = document.getElementById('checkoutEmail').value;
+            const address = document.getElementById('checkoutAddress').value;
+            const city = document.getElementById('checkoutCity').value;
+            
+            if (!name || !phone || !email || !address || !city) {
+                alert('Будь ласка, заповніть всі обов\'язкові поля (позначені *)');
+                return;
+            }
+            
+            alert(`Дякуємо за замовлення, ${name}! Ми зв'яжемося з вами найближчим часом для підтвердження.`);
+            
+            // Clear cart and close modals
+            cart = [];
+            updateCart();
+            checkoutModal.style.display = 'none';
+        }
+
+        // Get category name
+        function getCategoryName(category) {
+            switch(category) {
+                case 'cotton': return 'Баво́вна';
+                case 'linen': return 'Льон';
+                case 'synthetic': return 'Синтетика';
+                default: return '';
+            }
+        }
+
+        // Get density text
+        function getDensityText(density) {
+            switch(density) {
+                case 'light': return 'Легка';
+                case 'medium': return 'Середня';
+                case 'heavy': return 'Щільна';
+                default: return '';
+            }
+        }
+
+        // Filter and sort products
+        function filterAndSortProducts() {
+            const categoryFilter = document.getElementById('category').value;
+            const densityFilter = document.getElementById('density').value;
+            const sortOption = document.getElementById('sort').value;
+            
+            let filteredProducts = products;
+            
+            // Apply category filter
+            if (categoryFilter !== 'all') {
+                filteredProducts = filteredProducts.filter(product => product.category === categoryFilter);
+            }
+            
+            // Apply density filter
+            if (densityFilter !== 'all') {
+                filteredProducts = filteredProducts.filter(product => product.density === densityFilter);
+            }
+            
+            // Apply sorting
+            if (sortOption === 'price-low') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortOption === 'price-high') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            }
+            
+            displayProducts(filteredProducts);
+        }
+
+        // Search products
+        function searchProducts(query) {
+            if (!query.trim()) {
+                searchResults.innerHTML = '<div class="search-result-item">Введіть запит для пошуку</div>';
+                return;
+            }
+            
+            const results = products.filter(product => 
+                product.name.toLowerCase().includes(query.toLowerCase())
+            );
+            
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="search-result-item">Нічого не знайдено</div>';
+                return;
+            }
+            
+            results.forEach(product => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'search-result-item';
+                resultItem.innerHTML = `
+                    <div class="search-result-name">${product.name}</div>
+                    <div class="search-result-details">
+                        <span>${getCategoryName(product.category)}</span>
+                        <span>${product.price} грн/м</span>
+                    </div>
+                `;
+                resultItem.addEventListener('click', function() {
+                    openProductModal(product.id);
+                    searchModal.style.display = 'none';
+                    searchInput.value = '';
+                    searchResults.innerHTML = '';
+                });
+                searchResults.appendChild(resultItem);
+            });
+        }
+
+        // Add to cart
+        function addToCart(productId, quantity = 1) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: quantity
+                });
+            }
+            
+            updateCart();
+            showCartNotification();
+        }
+
+        // Update cart
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items in modal
+            cartItems.innerHTML = '';
+            let totalPrice = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-img" style="background-image: url('${item.image}')"></div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${item.price} грн/м × ${item.quantity}м = ${itemTotal} грн</div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                        <button class="quantity-btn remove" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            // Update total price
+            cartTotal.textContent = `Загальна сума: ${totalPrice} грн`;
+            
+            // Add event listeners to cart item buttons
+            document.querySelectorAll('.decrease').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    decreaseQuantity(id);
+                });
+            });
+            
+            document.querySelectorAll('.increase').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    increaseQuantity(id);
+                });
+            });
+            
+            document.querySelectorAll('.remove').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    removeFromCart(id);
+                });
+            });
+        }
+
+        // Decrease quantity
+        function decreaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            } else {
+                removeFromCart(productId);
+            }
+            updateCart();
+        }
+
+        // Increase quantity
+        function increaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            item.quantity += 1;
+            updateCart();
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+
+        // Show cart notification
+        function showCartNotification() {
+            const notification = document.createElement('div');
+            notification.textContent = 'Товар додано до кошика!';
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.background = 'var(--success)';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.zIndex = '1000';
+            notification.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display all products initially
+            displayProducts(products);
+            
+            // Filter and sort event listeners
+            document.getElementById('category').addEventListener('change', filterAndSortProducts);
+            document.getElementById('density').addEventListener('change', filterAndSortProducts);
+            document.getElementById('sort').addEventListener('change', filterAndSortProducts);
+            
+            // Cart modal
+            cartIcon.addEventListener('click', function() {
+                cartModal.style.display = 'flex';
+            });
+            
+            closeModal.addEventListener('click', function() {
+                cartModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === cartModal) {
+                    cartModal.style.display = 'none';
+                }
+            });
+            
+            // Search modal
+            searchIcon.addEventListener('click', function() {
+                searchModal.style.display = 'flex';
+                searchInput.focus();
+            });
+            
+            closeSearch.addEventListener('click', function() {
+                searchModal.style.display = 'none';
+                searchInput.value = '';
+                searchResults.innerHTML = '';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === searchModal) {
+                    searchModal.style.display = 'none';
+                    searchInput.value = '';
+                    searchResults.innerHTML = '';
+                }
+            });
+            
+            // Product modal
+            productModalClose.addEventListener('click', function() {
+                productModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === productModal) {
+                    productModal.style.display = 'none';
+                }
+            });
+            
+            // Checkout modal
+            checkoutModalClose.addEventListener('click', function() {
+                checkoutModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === checkoutModal) {
+                    checkoutModal.style.display = 'none';
+                }
+            });
+            
+            // Search functionality
+            searchButton.addEventListener('click', function() {
+                searchProducts(searchInput.value);
+            });
+            
+            searchInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    searchProducts(searchInput.value);
+                } else {
+                    searchProducts(searchInput.value);
+                }
+            });
+            
+            // Checkout button
+            checkoutBtn.addEventListener('click', function() {
+                openCheckoutModal();
+            });
+            
+            // Contact form
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Дякуємо за ваше повідомлення! Ми відповімо вам найближчим часом.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
