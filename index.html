@@ -301,9 +301,9 @@
     </footer>
 
     <script>
-        // Product data with additional details
+// Product data with additional details
         const products = [
-            // Cotton products (5 items)
+            // --- COTTON PRODUCTS (Original 1-5 + New 6-10) ---
             { 
                 id: 1, 
                 name: "Бавовна біла", 
@@ -389,8 +389,85 @@
                     "https://market365.com.ua/img/sm/3c5a486c/3d4f8c.jpg"
                 ]
             },
-            
-            // Linen products (5 items)
+            // NEW COTTON ITEMS
+            { 
+                id: 16, 
+                name: "Сатин Преміум", 
+                price: 250, 
+                category: "cotton", 
+                density: "medium", 
+                image: "https://tkani-ukr-opt.com.ua/wp-content/uploads/2025/11/img_7449.webp", 
+                badge: "Топ",
+                description: "Гладкий та шовковистий сатин преміум класу. Має благородний блиск, ідеальний для постільної білизни.",
+                composition: "100% мерсеризована бавовна",
+                width: "220 см",
+                care: "Делікатне прання 40°C",
+                images: [
+                    "https://tkani-ukr-opt.com.ua/wp-content/uploads/2025/11/img_7449.webp"
+                ]
+            },
+            { 
+                id: 17, 
+                name: "Фланель Картата", 
+                price: 190, 
+                category: "cotton", 
+                density: "medium", 
+                image: "https://images.prom.ua/6942308077_w300_h300_flanel-kletochka-sero-bezhevaya.jpg",
+                description: "Тепла та затишна фланель у клітинку. Найкращий вибір для осінніх сорочок та піжам.",
+                composition: "100% бавовна",
+                width: "150 см",
+                care: "Прання 40°C, можлива усадка до 5%",
+                images: [
+                    "https://images.prom.ua/6942308077_w300_h300_flanel-kletochka-sero-bezhevaya.jpg"
+                ]
+            },
+            { 
+                id: 18, 
+                name: "Муслін Двошаровий", 
+                price: 210, 
+                category: "cotton", 
+                density: "light", 
+                image: "https://tkani-atlas.com.ua/assets/images/products/62751/d9bcf5ab92e6b697710cee7c306c27bc709e3c66.webp",
+                description: "Легкий жатий муслін, що дихає. Ідеальний для літніх сарафанів та дитячих пелюшок.",
+                composition: "100% бавовна",
+                width: "135 см",
+                care: "Прання 30°C, не прасувати для збереження ефекту жатості",
+                images: [
+                    "https://tkani-atlas.com.ua/assets/images/products/62751/d9bcf5ab92e6b697710cee7c306c27bc709e3c66.webp"
+                ]
+            },
+            { 
+                id: 19, 
+                name: "Поплін Принтований", 
+                price: 160, 
+                category: "cotton", 
+                density: "medium", 
+                image: "https://grandtextile.com.ua/image/catalog/Blog/barhat-opisanie/HB-2304-3508_9-801x534.jpg",
+                description: "Якісний поплін з дрібним візерунком. Добре тримає форму, підходить для суконь.",
+                composition: "100% бавовна",
+                width: "150 см",
+                care: "Стандартне прання 40°C",
+                images: [
+                    "https://grandtextile.com.ua/image/catalog/Blog/barhat-opisanie/HB-2304-3508_9-801x534.jpg"
+                ]
+            },
+            { 
+                id: 20, 
+                name: "Саржа Робоча", 
+                price: 230, 
+                category: "cotton", 
+                density: "heavy", 
+                image: "https://domtex.com.ua/files/resized/products/sumka3.1800x1800w.jpg",
+                description: "Дуже міцна саржа діагонального плетіння. Для уніформи, фартухів та сумок-шоперів.",
+                composition: "100% бавовна",
+                width: "160 см",
+                care: "Прання 60°C, висока зносостійкість",
+                images: [
+                    "https://domtex.com.ua/files/resized/products/sumka3.1800x1800w.jpg"
+                ]
+            },
+
+            // --- LINEN PRODUCTS (Original 6-10 + New 11-15) ---
             { 
                 id: 6, 
                 name: "Льон натуральний", 
@@ -473,8 +550,86 @@
                     "https://tk.ua/uploads/product_images/e7/71/w720_fuj6oef5s_9fc160be.webp"
                 ]
             },
-            
-            // Synthetic products (5 items)
+            // NEW LINEN ITEMS
+            { 
+                id: 21, 
+                name: "Льон Пом'якшений (Washed)", 
+                price: 450, 
+                category: "linen", 
+                density: "medium", 
+                image: "https://tk.ua/uploads/product_images/52/c8/w420_frnh1d4fm_197c0b4e.webp",
+                badge: "Преміум",
+                description: "Льон, що пройшов процедуру stone-wash. Неймовірно м'який, має ефект 'м'ятості', не дає усадки.",
+                composition: "100% льон",
+                width: "145 см",
+                care: "Прання 40°C, не потребує прасування",
+                images: [
+                    "https://tk.ua/uploads/product_images/52/c8/w420_frnh1d4fm_197c0b4e.webp"
+                ]
+            },
+            { 
+                id: 22, 
+                name: "Льон Жаккард", 
+                price: 480, 
+                category: "linen", 
+                density: "heavy", 
+                image: "https://images.prom.ua/6385415840_w1280_h640_6385415840.jpg",
+                description: "Вишуканий льон з витканим візерунком. Для скатертин, штор або етно-одягу.",
+                composition: "100% льон",
+                width: "150 см",
+                care: "Делікатне прання, прасування з вивороту",
+                images: [
+                    "https://images.prom.ua/6385415840_w1280_h640_6385415840.jpg"
+                ]
+            },
+            { 
+                id: 23, 
+                name: "Льон Вуальний (Сітка)", 
+                price: 310, 
+                category: "linen", 
+                density: "light", 
+                image: "https://lanita-shtor.com.ua/image/cache/catalog/shop/8920/tyul-len-setka-s-lyureksom-helen-tll-8-900x899.jpg",
+                description: "Напівпрозорий, дуже легкий льон рідкого плетіння. Ідеальний для легких фіранок та тунік.",
+                composition: "100% льон",
+                width: "280 см",
+                care: "Ручне прання в холодній воді",
+                images: [
+                    "https://lanita-shtor.com.ua/image/cache/catalog/shop/8920/tyul-len-setka-s-lyureksom-helen-tll-8-900x899.jpg"
+                ]
+            },
+            { 
+                id: 24, 
+                name: "Льон Костюмний Смужка", 
+                price: 390, 
+                category: "linen", 
+                density: "medium", 
+                image: "https://tk.ua/uploads/product_images/3b/94/w432_fuj6ok3m4_1cc91bc5.webp",
+                description: "Класичний костюмний льон у тонку смужку. Стильний вибір для ділового літнього гардеробу.",
+                composition: "100% льон",
+                width: "145 см",
+                care: "Хімчистка або делікатне прання",
+                images: [
+                    "https://tk.ua/uploads/product_images/3b/94/w432_fuj6ok3m4_1cc91bc5.webp"
+                ]
+            },
+            { 
+                id: 25, 
+                name: "Льон Віскозний", 
+                price: 290, 
+                category: "linen", 
+                density: "medium", 
+                image: "https://megatex.biz/image/data/126/12634.001.jpg",
+                badge: "Акція",
+                description: "Суміш льону та віскози. Менше мнеться ніж чистий льон, більш струмливий.",
+                composition: "30% льон, 70% віскоза",
+                width: "140 см",
+                care: "Прання 30°C",
+                images: [
+                    "https://megatex.biz/image/data/126/12634.001.jpg"
+                ]
+            },
+
+            // --- SYNTHETIC PRODUCTS (Original 11-15 + New 16-20) ---
             { 
                 id: 11, 
                 name: "Поліестер м'який", 
@@ -514,14 +669,13 @@
                 price: 160, 
                 category: "synthetic", 
                 density: "medium", 
-                image: "https://domtkani.com.ua/ua/assets/thumbstmp/7/7008894977967bd1f139da5006e6329d.jpg",
+                image: "https://tk.ua/uploads/product_images/19/ca/w432_fuj88eqpc_366051e1.webp",
                 description: "Спеціальна тканина для спортивного одягу з властивістю відводити вологу. Комфортна при активному русі.",
                 composition: "88% поліестер, 12% еластан",
                 width: "150 см",
                 care: "Прання при 30°C, швидке сушіння",
                 images: [
-                    "https://domtkani.com.ua/ua/assets/thumbstmp/7/7008894977967bd1f139da5006e6329d.jpg",
-                    "https://domtkani.com.ua/ua/assets/thumbstmp/5/582a71f67453fd8e3027c78ae324b737.jpg"
+                    "https://tk.ua/uploads/product_images/19/ca/w432_fuj88eqpc_366051e1.webp"
                 ]
             },
             { 
@@ -530,14 +684,13 @@
                 price: 200, 
                 category: "synthetic", 
                 density: "heavy", 
-                image: "https://domtkani.com.ua/images/product/5090/000224199_p_l.jpg",
+                image: "https://tkani5.ua/49813-large_default/a.jpg",
                 description: "Водостійка синтетична тканина з поліуретановим покриттям. Ідеальна для курток, дощовиків та спорядження.",
                 composition: "100% поліестер з PU покриттям",
                 width: "150 см",
                 care: "Протирання вологою ганчіркою, не прання",
                 images: [
-                    "https://domtkani.com.ua/images/product/5090/000224199_p_l.jpg",
-                    "https://domtkani.com.ua/ua/assets/thumbstmp/f/f1d7a39a73d02cf08af478b0afa9abf2.jpg"
+                    "https://tkani5.ua/49813-large_default/a.jpg"
                 ]
             },
             { 
@@ -546,15 +699,91 @@
                 price: 180, 
                 category: "synthetic", 
                 density: "medium", 
-                image: "https://tk.ua/uploads/product_images/d0/0d/w720_g0uq3f0em_a789beb3.webp", 
+                image: "https://tkani-atlas.com.ua/assets/images/products/22124/4e24bab980ae10bda9fcc798ea9bfa70b8b6e344.webp", 
                 badge: "Акція",
                 description: "Декоративна синтетична тканина з цікавою текстурою. Використовується для штор, покривал та декоративних подушек.",
                 composition: "100% поліестер",
                 width: "140 см",
                 care: "Прання при 30°C, делікатний режим",
                 images: [
-                    "https://tk.ua/uploads/product_images/d0/0d/w720_g0uq3f0em_a789beb3.webp",
-                    "https://tk.ua/uploads/product_images/de/a5/w720_g0uq3aiif_0fbe8eea.webp"
+                    "https://tkani-atlas.com.ua/assets/images/products/22124/4e24bab980ae10bda9fcc798ea9bfa70b8b6e344.webp"
+                ]
+            },
+            // NEW SYNTHETIC ITEMS
+            { 
+                id: 26, 
+                name: "Шифон Однотонний", 
+                price: 110, 
+                category: "synthetic", 
+                density: "light", 
+                image: "https://images.prom.ua/4499733251_w1280_h640_4499733251.jpg",
+                description: "Напівпрозора, легка тканина, що гарно драпірується. Для літніх блуз та суконь.",
+                composition: "100% поліестер",
+                width: "150 см",
+                care: "Ручне прання 30°C",
+                images: [
+                    "https://images.prom.ua/4499733251_w1280_h640_4499733251.jpg"
+                ]
+            },
+            { 
+                id: 27, 
+                name: "Штучне Хутро", 
+                price: 550, 
+                category: "synthetic", 
+                density: "heavy", 
+                image: "https://content.rozetka.com.ua/goods/images/big/415280592.jpg",
+                badge: "Тепло",
+                description: "М'яке та густе штучне хутро. Етична альтернатива для пошиття шуб, жилеток та декору.",
+                composition: "100% поліестер/акрил",
+                width: "150 см",
+                care: "Тільки хімчистка",
+                images: [
+                    "https://content.rozetka.com.ua/goods/images/big/415280592.jpg"
+                ]
+            },
+            { 
+                id: 28, 
+                name: "Органза Вечірня", 
+                price: 140, 
+                category: "synthetic", 
+                density: "light", 
+                image: "https://www.slk.kh.ua/files/get?hash=31031ac72304d20e4746253d1efc0dcd",
+                description: "Жорстка, прозора тканина з блиском. Чудово тримає форму, для святкового одягу та декору.",
+                composition: "100% поліестер",
+                width: "150 см",
+                care: "Делікатне прання, прасування через тканину",
+                images: [
+                    "https://www.slk.kh.ua/files/get?hash=31031ac72304d20e4746253d1efc0dcd"
+                ]
+            },
+            { 
+                id: 29, 
+                name: "Фліс Полар", 
+                price: 220, 
+                category: "synthetic", 
+                density: "medium", 
+                image: "https://tkani-atlas.com.ua/assets/images/products/39839/86d3a409d2982dea2c52331ae43522447a8f50ce.webp",
+                description: "Тепла, м'яка трикотажна тканина з начосом. Ідеальна для спортивних кофт, шапок та пледів.",
+                composition: "100% поліестер",
+                width: "150 см",
+                care: "Прання 40°C, швидко сохне",
+                images: [
+                    "https://tkani-atlas.com.ua/assets/images/products/39839/86d3a409d2982dea2c52331ae43522447a8f50ce.webp"
+                ]
+            },
+            { 
+                id: 30, 
+                name: "Тафта Ошатна", 
+                price: 190, 
+                category: "synthetic", 
+                density: "medium", 
+                image: "https://tk.ua/uploads/product_images/30/40/w432_frnp5c9s7_4df7ba63.webp",
+                description: "Гладка тканина з характерним глянцевим блиском. Шарудить при русі, для вечірніх суконь.",
+                composition: "100% поліестер",
+                width: "150 см",
+                care: "Прання 30°C, прасування на низькій температурі",
+                images: [
+                    "https://tk.ua/uploads/product_images/30/40/w432_frnp5c9s7_4df7ba63.webp"
                 ]
             }
         ];
@@ -1123,4 +1352,5 @@
         });
     </script>
 </body>
+
 </html>
